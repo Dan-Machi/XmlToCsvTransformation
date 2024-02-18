@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using EmployeeXmlTransformation.Interfaces;
 using EmployeeXmlTransformation.Services;
+using TransformationLogic;
 
 namespace EmployeeXmlTransformation
 {
@@ -11,6 +12,8 @@ namespace EmployeeXmlTransformation
             var builder = new ContainerBuilder();
 
             builder.RegisterType<AppService>().As<IAppService>();
+            builder.RegisterModule<TransformationModule>();
+            builder.RegisterType<MapperService>().As<IMapperService>();
 
             return builder.Build();
         }

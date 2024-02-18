@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Employer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CompanyName>Andromeda a.s.</CompanyName>
+  <Employees>
+    <Employee>
+      <Id>79102</Id>
+      <FirstName>Tomáš</FirstName>
+      <LastName>KRÁLÍK</LastName>
+      <Address>
+        <Street>U Kotce</Street>
+        <StreetNo>3</StreetNo>
+        <City>Žatec</City>
+      </Address>
+      <EmployedSince>2020-04-01T09:00:00</EmployedSince>
+    </Employee>
+    <Employee>
+      <Id>62206</Id>
+      <FirstName>Klára</FirstName>
+      <LastName>OKURKOVÁ</LastName>
+      <Address>
+        <Street>U Zahrady</Street>
+        <StreetNo>13</StreetNo>
+        <City>Kladno</City>
+      </Address>
+      <EmployedSince>2020-01-12T13:50:00</EmployedSince>
+    </Employee>
+    <Employee>
+      <Id>58275</Id>
+      <FirstName>Antonín</FirstName>
+      <LastName>CÍSAŘ</LastName>
+      <Address>
+        <Street>Cimbuří</Street>
+        <StreetNo xsi:nil="true" />
+        <City>Karlštejn</City>
+      </Address>
+      <EmployedSince>2020-06-01T00:00:00</EmployedSince>
+    </Employee>
+  </Employees>
+</Employer>

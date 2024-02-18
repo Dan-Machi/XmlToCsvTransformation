@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Employer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CompanyName>Fíčuro s.r.o.</CompanyName>
+  <Employees>
+    <Employee>
+      <Id>82708</Id>
+      <FirstName>ROMAN</FirstName>
+      <LastName>MACÍK</LastName>
+      <Address>
+        <Street>Uličná</Street>
+        <StreetNo>1</StreetNo>
+        <City>Ostrava</City>
+      </Address>
+      <EmployedSince>2018-05-01T13:11:20</EmployedSince>
+    </Employee>
+    <Employee>
+      <Id>63092</Id>
+      <FirstName>MICHAL</FirstName>
+      <LastName>VYLEŽÍK</LastName>
+      <Address>
+        <Street>Nemocniční</Street>
+        <StreetNo>7</StreetNo>
+        <City>Praha</City>
+      </Address>
+      <EmployedSince xsi:nil="true" />
+    </Employee>
+    <Employee>
+      <Id>95689</Id>
+      <FirstName>KATARÍNA</FirstName>
+      <LastName>STEJSKALOVÁ</LastName>
+      <Address>
+        <Street>U Kavárny</Street>
+        <StreetNo xsi:nil="true" />
+        <City>Brno</City>
+      </Address>
+      <EmployedSince>2023-01-01T00:00:00</EmployedSince>
+    </Employee>
+    <Employee>
+      <Id>47851</Id>
+      <FirstName>LIBOR</FirstName>
+      <LastName>TLAČENKA</LastName>
+      <Address>
+        <StreetNo>1</StreetNo>
+        <City>Opatov</City>
+      </Address>
+      <EmployedSince>2023-01-12T12:00:05</EmployedSince>
+    </Employee>
+  </Employees>
+</Employer>

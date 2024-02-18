@@ -11,4 +11,20 @@
     <PackageReference Include="Autofac" Version="8.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TransformationLogic\TransformationLogic.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Input\Andromeda_2020.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Input\Andromeda_2023.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Input\Ficuro_2023.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

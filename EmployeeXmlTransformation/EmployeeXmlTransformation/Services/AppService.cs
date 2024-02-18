@@ -1,28 +1,30 @@
-﻿using EmployeeXmlTransformation.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using EmployeeXmlTransformation.Interfaces;
+using EmployeeXmlTransformation.Models;
+using TransformationLogic.Interfaces;
 
 namespace EmployeeXmlTransformation.Services
 {
-    public class AppService
+    public class AppService : IAppService
     {
         private const string InputFolderName = "Input";
         private const string OutputFolderName = "Output";
 
         private InputData _inputData;
+        private readonly IMapperService _mapperService;
+        private readonly ITransformationService _transformationService;
 
-        public AppService()
+        public AppService(ITransformationService transformationService, IMapperService mapperService)
         {
             _inputData = new InputData();
+            _transformationService = transformationService;
+            _mapperService = mapperService;
         }
 
         public void Run()
         {
             InputFolder();
             OutputFolder();
+            _transformationService.Transform(_mapperService.Map(_inputData));
         }
 
         private void InputFolder()

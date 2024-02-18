@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Employer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CompanyName>Andromeda a.s.</CompanyName>
+  <Employees>
+    <Employee>
+      <Id>88723</Id>
+      <FirstName>Bohumil</FirstName>
+      <LastName>Klaďas</LastName>
+      <Address>
+        <StreetNo xsi:nil="true" />
+        <City>Ostrava</City>
+      </Address>
+      <EmployedSince>2023-01-01T00:00:00</EmployedSince>
+    </Employee>
+    <Employee>
+      <Id>91176</Id>
+      <FirstName>Anna-Marie</FirstName>
+      <LastName>Fuchs</LastName>
+      <Address>
+        <Street>Pařížská</Street>
+        <StreetNo>2</StreetNo>
+        <City>Praha</City>
+      </Address>
+      <EmployedSince>2023-02-13T12:31:00</EmployedSince>
+    </Employee>
+    <Employee>
+      <Id>28640</Id>
+      <FirstName>Josef</FirstName>
+      <LastName>Bartoš</LastName>
+      <Address>
+        <StreetNo>0</StreetNo>
+        <City>Kladno</City>
+      </Address>
+      <EmployedSince>2023-01-02T09:00:00</EmployedSince>
+    </Employee>
+    <Employee>
+      <Id>9763</Id>
+      <FirstName>Šárka</FirstName>
+      <LastName>Matoušková</LastName>
+      <EmployedSince xsi:nil="true" />
+    </Employee>
+  </Employees>
+</Employer>
