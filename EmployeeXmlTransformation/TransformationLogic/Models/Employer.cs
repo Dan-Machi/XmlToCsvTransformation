@@ -2,7 +2,7 @@
 {
     public class Employer
     {
-        public string CompanyName { get; set; }
-        public List<Employee> Employees { get; set;}
+        public string CompanyName { get; set; } = default!;
+        public List<Employee> Employees { get; set; } = new();
     }
 }

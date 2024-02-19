@@ -2,6 +2,6 @@
 {
     public class Employers
     {
-        public Employer Employer { get; set; }
+        public Employer Employer { get; set; } = new();
     }
 }

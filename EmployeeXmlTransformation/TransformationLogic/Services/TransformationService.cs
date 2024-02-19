@@ -4,6 +4,7 @@ using TransformationLogic.Models;
 using TransformationLogic.Interfaces;
 using CsvHelper;
 using System.Globalization;
+using log4net;
 
 namespace TransformationLogic.Services
 {
@@ -11,11 +12,20 @@ namespace TransformationLogic.Services
     {
         private const string OutputFileName = "output.csv";
 
+        private readonly ILog _logger;
+
+        public TransformationService(ILog logger)
+        {
+            _logger = logger;
+        }
+
         public void Transform(InputDataDto inputData)
         {
+            _logger.Info($"Transformation started.");
             var transformedEmployees = DeserializeEmployeeXmlFiles(inputData.InputFolder);
             SerializeEmployeesToCsv(transformedEmployees, inputData.OutputFolder);
 
+            _logger.Info($"Transformation finished. Csv file saved to {Path.Combine(inputData.OutputFolder, OutputFileName)}");
             Console.WriteLine($"Csv file saved to {Path.Combine(inputData.OutputFolder, OutputFileName)}");
         }
 
@@ -30,6 +40,7 @@ namespace TransformationLogic.Services
                 result.AddRange(DeserializeEmployeeXmlFile(file));
             }
 
+            _logger.Info($"{result.Count} records created.");
             return result;
         }
 
@@ -49,8 +60,11 @@ namespace TransformationLogic.Services
             {
                 var employer = (Employer)ser.Deserialize(reader);
 
-                if (employer == null) 
+                if (employer == null)
+                {
+                    _logger.Error($"File {input} could not be deserialized.");
                     throw new NullReferenceException($"File {input} could not be deserialized.");
+                }
                 
                 return Map(employer);
             }

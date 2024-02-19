@@ -8,7 +8,7 @@ namespace TransformationLogic.Models
 {
     public class InputDataDto
     {
-        public string InputFolder { get; set; }
-        public string OutputFolder { get; set; }
+        public string InputFolder { get; set; } = default!;
+        public string OutputFolder { get; set; } = default!;
     }
 }
