@@ -41,7 +41,14 @@ namespace TransformationLogic.Services
             }
 
             _logger.Info($"{result.Count} records created.");
-            return result;
+
+            return OrderEmployeeData(result);
+        }
+
+        private IEnumerable<TransformedEmployee> OrderEmployeeData(IEnumerable<TransformedEmployee> employees)
+        {
+            return employees.OrderBy(x => x.CompanyName)
+                .ThenBy(x => x.EmployeeName).ToList();
         }
 
         private void SerializeEmployeesToCsv(IEnumerable<TransformedEmployee> transformedEmployees, string outputFolder)
@@ -72,7 +79,8 @@ namespace TransformationLogic.Services
 
         private IEnumerable<TransformedEmployee> Map(Employer employer)
         {
-            return employer.Employees.Select(x => Map(x, employer.CompanyName)).ToList();
+            return employer.Employees.Where(x => x.EmployedSince != null)
+                .Select(x => Map(x, employer.CompanyName)).ToList();
         }
 
         private TransformedEmployee Map(Employee employee, string companyName)
@@ -82,10 +90,11 @@ namespace TransformationLogic.Services
                 CompanyName = companyName,
                 EmployeeName = $"{FirstLetterToUpperCase(employee.FirstName)} {FirstLetterToUpperCase(employee.LastName)}",
                 EmployeeNumber = employee.Id,
-                EmployeeAddress = employee.Address == null ? null : 
-                employee.Address.StreetNo == null ? $"{employee.Address.Street}, {employee.Address.City}" :
-                    $"{employee.Address.Street} {employee.Address.StreetNo}, {employee.Address.City}",
-                EmployedSince = employee.EmployedSince == null ? "NA" : employee.EmployedSince?.ToString("yyyy-MM-dd")
+                EmployedSince = employee.EmployedSince?.ToString("yyyy-MM-dd"),
+                EmployeeAddress = employee.Address == null ? "NA" :
+                    employee.Address.Street == null ? $"{employee.Address.City}" :
+                    employee.Address.StreetNo == null ? $"{employee.Address.Street}, {employee.Address.City}" :
+                    $"{employee.Address.Street} {employee.Address.StreetNo}, {employee.Address.City}"
             };
         }
 
